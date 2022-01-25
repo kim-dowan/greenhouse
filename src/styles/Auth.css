@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Dongle:wght@300;400;700&family=Gowun+Batang:wght@400;700&family=Jua&family=Nanum+Gothic:wght@400;700;800&display=swap");
+
+/*
+  font-family: 'Do Hyeon', sans-serif;
+  font-family: 'Dongle', sans-serif;
+  font-family: 'Gowun Batang', serif;
+  font-family: 'Jua', sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
+*/
+
+.auth_div {
+  display: inline-block;
+  font-family: "Gowun Batang", serif;
+  /* background-color: red; */
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.title {
+  font-family: "Dongle", sans-serif;
+  display: inline-block;
+  margin: 0;
+  margin-bottom: 20px;
+  color: #00b4db;
+  font-size: 70px;
+}
+
+.input_box {
+  width: 40%;
+  height: 30px;
+  border-radius: 5px;
+  padding: 5px 0;
+  padding-left: 15px;
+  border: 1px solid lightgray;
+}
+
+.submit_btn {
+  font-family: "Gowun Batang", serif;
+  width: 40%;
+  padding: 5px 0;
+  margin: 5px;
+  color: white;
+  font-size: 20px;
+  background-color: #00c6ed;
+  border: 0;
+  border-radius: 5px;
+}
+
+.toggle_p {
+  color: gray;
+}
+
+.newAccount_toggle {
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+}
+
+.newAccount_toggle:hover {
+  text-decoration: underline 1px;
+}
+
+.google_icon {
+  width: 40px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.auth_error {
+  color: red;
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 80px;
+  }
+  .input_box {
+    width: 60%;
+  }
+  .submit_btn {
+    width: 60%;
+  }
+}
