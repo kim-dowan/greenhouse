@@ -1,21 +1,26 @@
+import { firebaseInstance } from "fbase";
 import { useEffect, useState } from "react/cjs/react.development";
+import Loading from "routes/Loading";
+import TempChart from "./TempChart";
+import "styles/Home.css";
 
 const Home = ({ userObj }) => {
   const [init, setInit] = useState(false);
   useEffect(() => {
     console.log(userObj);
-    if (userObj.displayName) {
-      setInit(true);
-    } else {
-      window.location.reload();
-    }
+    setInit(true);
   }, []);
   return (
-    <div>
+    <div id="home">
       {init ? (
-        <div>안녕하세요 {userObj.displayName}님!</div>
+        <>
+          {/* <p>안녕하세요 {userObj.displayName}님!</p> */}
+          <div id="chart">
+            <TempChart />
+          </div>
+        </>
       ) : (
-        <div>잠시만 기다려주세요...!</div>
+        <Loading />
       )}
     </div>
   );

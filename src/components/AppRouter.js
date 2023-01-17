@@ -15,7 +15,7 @@ const AppRouter = ({ isLoggedIn, userObj }) => {
               <Navigation userObj={userObj} />
               <Home userObj={userObj} />
             </Route>
-            <Route exact path="/request/:tem/:hum">
+            <Route exact path="/request/:tem">
               <Request />
             </Route>
           </>
@@ -24,7 +24,7 @@ const AppRouter = ({ isLoggedIn, userObj }) => {
             <Route exact path="/">
               <Auth />
             </Route>
-            <Route exact path="/request/:tem/:hum">
+            <Route exact path="/request/:tem">
               <Request />
             </Route>
           </>

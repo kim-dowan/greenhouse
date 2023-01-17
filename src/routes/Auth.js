@@ -52,7 +52,8 @@ const Auth = () => {
         .createUserWithEmailAndPassword(id, pw)
         .then((userCredential) => {
           var user = userCredential.user;
-          authService.currentUser
+          authService
+            .currentUser()
             .updateProfile({
               displayName: name,
             })
@@ -95,6 +96,7 @@ const Auth = () => {
               onChange={onChange}
               required
             />
+            <br />
             <input
               className="input_box"
               type="email"

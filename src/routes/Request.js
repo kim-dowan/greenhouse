@@ -1,21 +1,22 @@
-import { dbService } from "fbase";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { firebaseInstance } from "fbase";
+import { useParams } from "react-router-dom";
 
 const Request = () => {
-  const { tem, hum } = useParams();
-  const now_time = new Date();
-  const year = String(now_time.getFullYear());
-  const month = String(now_time.getMonth() + 1);
-  const date = String(now_time.getDate());
-  const hour = String(now_time.getHours());
-  const min = String(now_time.getMinutes());
-  const time = year + "_" + month + "_" + date + "-" + hour + ":" + min;
-  console.log(time + "/" + tem + "/" + hum);
-  return (
-    <div>
-      request {tem} {hum}
-    </div>
-  );
+  const { tem } = useParams();
+  const date = new Date();
+  const date_str = `${date.getMonth()}월${date.getDate()}일`;
+  const time_str = `${date.getHours()}시${date.getMinutes()}분`;
+  const dataBaseRef = firebaseInstance.database().ref();
+  dataBaseRef
+    .once("value")
+    .then((snapshot) => {
+      console.log(snapshot.val());
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  return <div>request</div>;
 };
 
 export default Request;
